@@ -1,9 +1,9 @@
 import { Router } from 'express';
+import AuthRouter from './auth/auth.module';
 
 export default (): Router => {
   const app = Router();
 
-  //TODO: add routes here...
-
+  app.use('/auth', AuthRouter());
   return app;
 };
