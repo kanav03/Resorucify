@@ -23,8 +23,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             return;
         }
 
-        const collection = (await db()).collection("users");
-        const user = await collection.findOne({ email });
+        const user = await (await db()).collection("users").findOne({ email });
 
         if (user) {
             res.status(403).json({
@@ -44,7 +43,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             createdAt: new Date(),
         };
 
-        const result = await collection.insertOne(newUser);
+        const result = await (await db()).collection('users').insertOne(newUser);
 
         if (!result.acknowledged) {
             res.status(500).json({
@@ -59,6 +58,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             message: "User created successfully.",
         });
     } catch (error) {
-        res.status(400).json({ success: false, error });
+        res.status(500).json({ success: false, error });
     }
 }
