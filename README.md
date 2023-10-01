@@ -1,14 +1,10 @@
-<div align="center">
-</div>
+<h1 align="center">
+Resorucify
+</h1>
 
-<br>
-<p align="center">
-Bootstrapped using <code>Springboard</code>
-</p>
-<p align="center">
-</p>
-## Built With 🚀
 
+## Built By Team DedSec
+### Tech Stack
 - [MongoDB](https://www.mongodb.com/)
 - [Express](https://expressjs.com/)
 - [React](https://reactjs.org/)
@@ -22,17 +18,17 @@ Bootstrapped using <code>Springboard</code>
 Install dependencies
 
 ```
-$ yarn
-# or
-$ npm install
+$ pnpm install
 ```
+Build the server
 
+```
+$ pnpm build
+```
 Start the server
 
 ```
-$ yarn start
-# or
-$ npm run start
+$ pnpm start
 ```
 
 ## Contributing 🤝
